@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "logica_cartas/1.0.0": {
+        "runtime": {
+          "logica_cartas.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "logica_cartas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
