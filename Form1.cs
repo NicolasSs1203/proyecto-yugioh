@@ -10,16 +10,9 @@ namespace YugiohInterfaz
             InitializeComponent();
         }
 
-        private void buttonVerCartas_Click(object sender, EventArgs e)
-        {
-            FormVerCartas formCartas = new FormVerCartas();
-            formCartas.ShowDialog();
-        }
-
         private void buttonJugar_Click(object sender, EventArgs e)
         {
-            FormCampoDeJuego campo = new FormCampoDeJuego();
-            campo.ShowDialog();
+            MessageBox.Show("¡Próximamente: Campo de Juego!", "Yu-Gi-Oh", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void buttonSalir_Click(object sender, EventArgs e)
