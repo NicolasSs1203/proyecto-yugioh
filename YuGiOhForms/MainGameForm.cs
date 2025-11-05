@@ -83,6 +83,7 @@ namespace YuGiOh
         private Button btnFasePrincipal = null!;
         private Button btnFaseBatalla = null!;
         private Button btnTerminarTurno = null!;
+        private Button btnAutores = null!;
         private TextBox txtLog = null!;
 
         public MainGameForm(Juego juego)
@@ -119,6 +120,23 @@ namespace YuGiOh
             Size = new Size(1000, 750);
             StartPosition = FormStartPosition.CenterScreen;
             BackColor = Color.DarkGreen;
+
+            // Agregar icono al formulario
+            try
+            {
+                string iconPath = Path.Combine(AppContext.BaseDirectory, "Resources", "170902742.jpg");
+                if (File.Exists(iconPath))
+                {
+                    using (var imgIcon = Image.FromFile(iconPath))
+                    {
+                        this.Icon = Icon.FromHandle(((Bitmap)imgIcon).GetHicon());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al cargar icono: {ex.Message}");
+            }
 
             // Panel del oponente (arriba)
             panelOponente = new Panel
@@ -257,11 +275,22 @@ namespace YuGiOh
             };
             btnTerminarTurno.Click += (s, e) => TerminarTurno();
 
+            btnAutores = new Button
+            {
+                Text = "Autores",
+                Location = new Point(10, 670),
+                Size = new Size(200, 35),
+                BackColor = Color.DarkSlateGray,
+                ForeColor = Color.White,
+                Font = new Font("Arial", 9, FontStyle.Bold)
+            };
+            btnAutores.Click += (s, e) => MostrarAutores();
+
             // Agregar controles al panel
             panelControles.Controls.AddRange(new Control[]
             {
                 lblTurno, lblFase, lblVidaJugador, lblVidaOponente,
-                btnFaseRobo, btnFasePrincipal, btnFaseBatalla, btnTerminarTurno
+                btnFaseRobo, btnFasePrincipal, btnFaseBatalla, btnTerminarTurno, btnAutores
             });
 
             // Agregar paneles al formulario
@@ -2716,6 +2745,93 @@ namespace YuGiOh
             {
                 EndUpdate();
             }
+        }
+
+        private void MostrarAutores()
+        {
+            Form autoresForm = new Form
+            {
+                Text = "Autores",
+                Width = 400,
+                Height = 300,
+                StartPosition = FormStartPosition.CenterParent,
+                BackColor = Color.White,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                MaximizeBox = false,
+                MinimizeBox = false
+            };
+
+            Label lblContenido = new Label
+            {
+                Text = "Desarrollado por:",
+                ForeColor = Color.Black,
+                Font = new Font("Arial", 11, FontStyle.Bold),
+                Location = new Point(20, 20),
+                AutoSize = true
+            };
+
+            LinkLabel linkNicolas = new LinkLabel
+            {
+                Text = "Nicolas Camacho",
+                ForeColor = Color.Blue,
+                Font = new Font("Arial", 11, FontStyle.Bold | FontStyle.Underline),
+                Location = new Point(20, 60),
+                AutoSize = true,
+                Cursor = Cursors.Hand
+            };
+            linkNicolas.LinkClicked += (s, e) => 
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = "https://github.com/NicolasSs1203",
+                        UseShellExecute = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo abrir el navegador: " + ex.Message);
+                }
+            };
+
+            Label lblOtros = new Label
+            {
+                Text = "Juan Carvajal\n" +
+                       "Kevin Pardo\n" +
+                       "Santiago Cuervo",
+                ForeColor = Color.Black,
+                Font = new Font("Arial", 11, FontStyle.Bold),
+                Location = new Point(20, 90),
+                AutoSize = true
+            };
+
+            Label lblApp = new Label
+            {
+                Text = "Yu-Gi-Oh! Card Game GUI\nVersión 1.0",
+                ForeColor = Color.Black,
+                Font = new Font("Arial", 10, FontStyle.Bold),
+                Location = new Point(20, 180),
+                AutoSize = true
+            };
+
+            Button btnCerrar = new Button
+            {
+                Text = "Cerrar",
+                DialogResult = DialogResult.OK,
+                Size = new Size(100, 35),
+                Location = new Point(150, 230),
+                BackColor = Color.DarkSlateGray,
+                ForeColor = Color.White,
+                Font = new Font("Arial", 10, FontStyle.Bold)
+            };
+
+            autoresForm.Controls.Add(lblContenido);
+            autoresForm.Controls.Add(linkNicolas);
+            autoresForm.Controls.Add(lblOtros);
+            autoresForm.Controls.Add(lblApp);
+            autoresForm.Controls.Add(btnCerrar);
+            autoresForm.ShowDialog(this);
         }
 
 
