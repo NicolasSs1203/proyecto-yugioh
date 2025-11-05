@@ -35,8 +35,8 @@ namespace YuGiOh.Models
             Console.WriteLine("--- Robando mano inicial ---");
             for (int i = 0; i < 5; i++)
             {
-                Jugador1.RobarCarta();
-                Jugador2.RobarCarta();
+                Jugador1.RobarCartaSinRestriccion();
+                Jugador2.RobarCartaSinRestriccion();
             }
 
             Console.WriteLine($"\n{Jugador1.Nombre} y {Jugador2.Nombre} robaron 5 cartas cada uno.");
@@ -49,6 +49,9 @@ namespace YuGiOh.Models
             var temp = JugadorActual;
             JugadorActual = JugadorOponente;
             JugadorOponente = temp;
+
+            // Resetear la restricción de robo para el nuevo turno
+            JugadorActual.YaRoboEsteTurno = false;
 
             NumeroTurno++;
 

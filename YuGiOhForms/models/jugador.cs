@@ -13,8 +13,31 @@ namespace YuGiOh.Models
         public List<Carta> Cementerio { get; set; } = new List<Carta>();
         
         public Campo MiCampo { get; set; } = new Campo();
+        public bool YaRoboEsteTurno { get; set; } = false;
 
         public void RobarCarta()
+        {
+            if (YaRoboEsteTurno)
+            {
+                Console.WriteLine($"{Nombre} ya robó una carta este turno.");
+                return;
+            }
+
+            if (Baraja.Count > 0)
+            {
+                var carta = Baraja[0];
+                Baraja.RemoveAt(0);
+                Mano.Add(carta);
+                Console.WriteLine($"{Nombre} robó: {carta.Nombre}");
+                YaRoboEsteTurno = true;
+            }
+            else
+            {
+                Console.WriteLine($"{Nombre} no tiene mas cartas en el deck");
+            }
+        }
+
+        public void RobarCartaSinRestriccion()
         {
             if (Baraja.Count > 0)
             {

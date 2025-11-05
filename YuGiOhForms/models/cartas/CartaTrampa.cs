@@ -5,6 +5,6 @@ namespace YuGiOh.Models.Cartas
     public class CartaTrampa : Carta
     {
         public TipoTrampa TipoTrampa { get; set; }
-        public bool EstaBocaAbajo { get; set; }
+        public new bool EstaBocaAbajo { get; set; }
     }
 }
