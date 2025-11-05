@@ -1,0 +1,14 @@
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\bin\Debug\net9.0-windows\YuGiOhForms.exe
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\bin\Debug\net9.0-windows\YuGiOhForms.deps.json
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\bin\Debug\net9.0-windows\YuGiOhForms.runtimeconfig.json
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\bin\Debug\net9.0-windows\YuGiOhForms.dll
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\bin\Debug\net9.0-windows\YuGiOhForms.pdb
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\obj\Debug\net9.0-windows\YuGiOhForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\obj\Debug\net9.0-windows\YuGiOhForms.AssemblyInfoInputs.cache
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\obj\Debug\net9.0-windows\YuGiOhForms.AssemblyInfo.cs
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\obj\Debug\net9.0-windows\YuGiOhForms.csproj.CoreCompileInputs.cache
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\obj\Debug\net9.0-windows\YuGiOhForms.dll
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\obj\Debug\net9.0-windows\refint\YuGiOhForms.dll
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\obj\Debug\net9.0-windows\YuGiOhForms.pdb
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\obj\Debug\net9.0-windows\YuGiOhForms.genruntimeconfig.cache
+C:\Users\Nicolas\programming\yugiohGui\YuGiOhForms\obj\Debug\net9.0-windows\ref\YuGiOhForms.dll
